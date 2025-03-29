@@ -99,6 +99,9 @@
     .carousel img {
         width: 100%; /* Show 1 image on mobile */
     }
+    #rot-template{
+        display: none;
+    }
 }
 .carousel-btn {
     position: absolute;
