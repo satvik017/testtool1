@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodata Maker</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="bg-gray-100">
@@ -78,7 +79,8 @@
         <!-- Bio Data Maker -->
         <div class="max-w-6xl mx-auto bg-white p-6 shadow-lg rounded-lg flex gap-6" id="BiodataMaker">
             <div class="md:w-2/3">
-                <h2 class="text-2xl font-bold mb-4">Biodata Information</h2>
+                <h2 class="text-4xl font-bold mb-4">Biodata Form</h2>
+                <h2 class="text-lg mb-4">Start Creating Your Marriage BioData.</h2>
     
                 <!-- Drag and Drop Profile Image Upload -->
                 <div class="flex items-center gap-6 mb-6">
@@ -92,7 +94,7 @@
                         <img id="image-preview" src="" alt="Profile Preview" class="max-h-full max-w-full hidden">
                     </div>
                 </div>
-    
+                
                 <table class="w-full border-collapse border border-gray-300">
                     <thead>
                         <tr class="bg-gray-200">
@@ -103,9 +105,9 @@
                         </tr>
                     </thead>
                     <tbody id="biodata-table-body">
-    
+                        
                         <!-- Personal details begins here -->
-                        <tr draggable="true" class="cursor-move">
+                        <!-- <tr draggable="true" class="cursor-move">
                             <td class="border border-gray-300 p-2 text-center cursor-move">
                                 <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
                                         viewBox="0 0 24 24">
@@ -119,7 +121,8 @@
                                 <button class="bg-red-500 text-white px-3 py-1 rounded"
                                     onclick="this.closest('tr').remove()">Delete</button>
                             </td>
-                        </tr>
+                        </tr> -->
+                        <tr> <td colspan="4"> <h2 class="p-2 text-xl">Personal Details:</h2> <i class='fas fa-edit'></i></td> </tr>
                         <tr draggable="true" class="cursor-move">
                             <td class="border border-gray-300 p-2 text-center cursor-move">
                                 <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
@@ -128,9 +131,8 @@
                                             d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
                                     </svg></span>
                             </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Name"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
+                            <td colspan="2" class="border border-gray-300 p-2"><input type="text" class="w-full font-bold p-1 border"
+                                    value="Name"><input type="text" class="w-full p-1 my-2 border"
                                     value="John Doe"></td>
                             <td class="border border-gray-300 p-2 text-center">
                                 <button class="bg-red-500 text-white px-3 py-1 rounded"
@@ -145,9 +147,8 @@
                                             d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
                                     </svg></span>
                             </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Date of Birth"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
+                            <td  colspan="2" class="border border-gray-300 p-2"><input type="text" class="w-full font-bold p-1 border"
+                                    value="Date of Birth"><input type="text" class="w-full p-1 my-2 border"
                                     value="01-01-2001"></td>
                             <td class="border border-gray-300 p-2 text-center">
                                 <button class="bg-red-500 text-white px-3 py-1 rounded"
@@ -309,7 +310,7 @@
                         </tr>
     
                         <!-- Family Details begins here -->
-                        <tr draggable="true" class="cursor-move">
+                        <!-- <tr draggable="true" class="cursor-move">
                             <td class="border border-gray-300 p-2 text-center cursor-move">
                                 <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
                                         viewBox="0 0 24 24">
@@ -323,7 +324,8 @@
                                 <button class="bg-red-500 text-white px-3 py-1 rounded"
                                     onclick="this.closest('tr').remove()">Delete</button>
                             </td>
-                        </tr>
+                        </tr> -->
+                        <tr> <td colspan="4"> <h2 class="p-2 text-xl">Family Details:</h2> </td> </tr>
                         <tr draggable="true" class="cursor-move">
                             <td class="border border-gray-300 p-2 text-center cursor-move">
                                 <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
@@ -410,7 +412,7 @@
                             </td>
                         </tr>
                         <!-- Contact Details begins here -->
-                        <tr draggable="true" class="cursor-move">
+                        <!-- <tr draggable="true" class="cursor-move">
                             <td class="border border-gray-300 p-2 text-center cursor-move">
                                 <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
                                         viewBox="0 0 24 24">
@@ -424,7 +426,8 @@
                                 <button class="bg-red-500 text-white px-3 py-1 rounded"
                                     onclick="this.closest('tr').remove()">Delete</button>
                             </td>
-                        </tr>
+                        </tr> -->
+                        <tr> <td colspan="4"> <h2 class="p-2 text-xl">Contact Details:</h2> </td> </tr>
                         <tr draggable="true" class="cursor-move">
                             <td class="border border-gray-300 p-2 text-center cursor-move">
                                 <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
