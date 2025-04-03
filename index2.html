@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Maker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-pink-600">Biodata Maker</a>
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-gray-700 focus:outline-none text-2xl">
+                ☰
+            </button>
+        </div>
+        <ul class="hidden md:flex space-x-6 text-gray-700 font-semibold">
+            <li><a href="#" class="hover:text-pink-500">Home</a></li>
+            <li><a href="#" class="hover:text-pink-500">Templates</a></li>
+            <li><a href="#" class="hover:text-pink-500">About</a></li>
+            <li><a href="./contact.html" class="hover:text-pink-500">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="menu" class="fixed top-0 right-[-100%] w-2/3 h-full bg-gray-800 text-white p-6 transition-all duration-300">
+        <button id="close-menu" class="text-white text-xl absolute top-4 right-4">✕</button>
+        <ul class="space-y-4 mt-10 text-lg">
+            <li><a href="#" class="block hover:text-pink-500">Home</a></li>
+            <li><a href="#" class="block hover:text-pink-500">Templates</a></li>
+            <li><a href="#" class="block hover:text-pink-500">About</a></li>
+            <li><a href="./contact.html" class="block hover:text-pink-500">Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- Header Section -->
+    <div class="flex flex-col-reverse md:flex-row items-center bg-gradient-to-r from-orange-400 to-red-800 text-white py-12 px-6 md:h-screen w-full">
+        <div class="md:w-3/6 w-full text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-bold">Create Your Perfect Marriage Biodata in Minutes!</h1>
+            <p class="mt-4 text-lg md:text-2xl">With our easy-to-use Biodata Maker, generate a personalized biodata for marriage in just a few simple steps. Choose from multiple templates and formats to suit your needs.</p>
+            <button class="mt-6 bg-pink-600 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-lg hover:bg-pink-700" id="createBio">Start Now for Free</button>
+            <p class="mt-2 text-sm">✅ 511 biodatas created today</p>
+        </div>
+        <div class="md:w-3/6 w-full px-5 hidden md:flex justify-center" id="rot-template">
+            <div class="container flex space-x-3">
+                <div class="card w-64 h-62 bg-white rounded-lg left-card shadow-md"></div>
+                <div class="card w-64 h-62 bg-gray-300 rounded-lg middle-card shadow-md"></div>
+                <div class="card w-64 h-62 bg-gray-500 rounded-lg right-card shadow-md"></div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- How It Works Section -->
+        <div class="max-w-6xl mx-auto mt-12 p-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">How it works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-2xl font-bold text-pink-600">1</div>
+                    <h3 class="text-xl font-semibold mt-4">Enter your information</h3>
+                    <p class="mt-2 text-gray-600">Simply add your personal, family, and contact details. You can also add a profile photo for your biodata.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-2xl font-bold text-yellow-500">2</div>
+                    <h3 class="text-xl font-semibold mt-4">Choose the template</h3>
+                    <p class="mt-2 text-gray-600">Create biodata with our wide variety of well-designed templates. Just select the template and we will do the rest.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-2xl font-bold text-green-500">3</div>
+                    <h3 class="text-xl font-semibold mt-4">Download the PDF</h3>
+                    <p class="mt-2 text-gray-600">Everything is done now, you will get your beautiful biodata in the PDF format. Thanks for using our marriage biodata maker!!</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Bio Data Maker -->
+        <div class="max-w-6xl mx-auto bg-white p-6 shadow-lg rounded-lg flex gap-6" id="BiodataMaker">
+            <div class="md:w-2/3">
+                <h2 class="text-4xl font-bold mb-4">Biodata Form</h2>
+                <h2 class="text-lg mb-4">Start Creating Your Marriage BioData.</h2>
+    
+                <!-- Drag and Drop Profile Image Upload -->
+                <div class="flex items-center gap-6 mb-6">
+                    <div class="w-1/2 border-2 border-dashed border-gray-300 p-6 text-center rounded-lg relative">
+                        <input type="file" id="profile-image"
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onchange="previewImage(event)">
+                        <p class="text-gray-600">Drag & Drop your profile image here or click to upload</p>
+                        <p class="text-sm text-gray-400">Supported formats: JPG, PNG (Max size: 2MB)</p>
+                    </div>
+                    <div class="w-1/2 flex justify-center items-center border border-gray-300 p-4 rounded-lg h-40">
+                        <img id="image-preview" src="" alt="Profile Preview" class="max-h-full max-w-full hidden">
+                    </div>
+                </div>
+                
+                <!-- Biodata Entry Section -->
+                <div class="max-w-4xl mx-auto mt-12 p-6 bg-white shadow-lg rounded-lg">
+                    <h2 class="text-3xl font-bold mb-6">Personal Details</h2>
+                    <div id="personal-details" class="space-y-4">
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Name">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <button class="move-btn" onclick="moveUp(this)">▲</button>
+                            <button class="move-btn" onclick="moveDown(this)">▼</button>
+                            <button class="delete-btn" onclick="removeField(this)">X</button>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Date of Birth">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <button class="move-btn" onclick="moveUp(this)">▲</button>
+                            <button class="move-btn" onclick="moveDown(this)">▼</button>
+                            <button class="delete-btn" onclick="removeField(this)">X</button>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Place of Birth">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <button class="move-btn" onclick="moveUp(this)">▲</button>
+                            <button class="move-btn" onclick="moveDown(this)">▼</button>
+                            <button class="delete-btn" onclick="removeField(this)">X</button>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Time of Birth">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <button class="move-btn" onclick="moveUp(this)">▲</button>
+                            <button class="move-btn" onclick="moveDown(this)">▼</button>
+                            <button class="delete-btn" onclick="removeField(this)">X</button>
+                        </div>
+                    </div>
+                    <button onclick="addField('personal-details')" class="mt-4 bg-blue-500 text-white p-2 rounded">+ Add More Fields</button>
+                </div>
+
+                <div class="max-w-4xl mx-auto mt-12 p-6 bg-white shadow-lg rounded-lg">
+                    <h2 class="text-3xl font-bold mb-6">Family Details</h2>
+                    <div id="family-details" class="space-y-4">
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Father's Name">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <button class="move-btn" onclick="moveUp(this)">▲</button>
+                            <button class="move-btn" onclick="moveDown(this)">▼</button>
+                            <button class="delete-btn" onclick="removeField(this)">X</button>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Father's Occupation">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <button class="move-btn" onclick="moveUp(this)">▲</button>
+                            <button class="move-btn" onclick="moveDown(this)">▼</button>
+                            <button class="delete-btn" onclick="removeField(this)">X</button>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Mother's Name">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <button class="move-btn" onclick="moveUp(this)">▲</button>
+                            <button class="move-btn" onclick="moveDown(this)">▼</button>
+                            <button class="delete-btn" onclick="removeField(this)">X</button>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Mother's Occupation">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <button class="move-btn" onclick="moveUp(this)">▲</button>
+                            <button class="move-btn" onclick="moveDown(this)">▼</button>
+                            <button class="delete-btn" onclick="removeField(this)">X</button>
+                        </div>
+                    </div>
+                    <button onclick="addField('family-details')" class="mt-4 bg-blue-500 text-white p-2 rounded">+ Add More Fields</button>
+                </div>
+            </div>
+    
+            <!-- Preview Area -->
+            <div class="hidden md:flex w-1/3 mt-6" id="biodata-preview" style="max-height: 700px;overflow: scroll;">
+                <h2 class="text-2xl font-semibold mb-3">Preview:</h2>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto bg-white p-6 flex gap-6">
+    
+            <button id="download-btn"
+                class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-lg hover:bg-blue-700">Download
+                Template</button>
+        </div>
+    
+    
+    <!-- Biodata Preview Section -->
+    <div class="max-w-6xl mx-auto mt-12 p-6 bg-white shadow-lg rounded-lg text-center">
+        <h2 class="text-2xl font-bold mb-6">Beautifully Handcrafted Marriage Biodata Templates</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="shadow-md p-4 bg-gray-50 rounded-lg">
+                <img src="https://biodatamaker.app/images/examples/eg24.png" alt="Biodata Template" class="mx-auto w-full">
+            </div>
+            <div class="shadow-md p-4 bg-gray-50 rounded-lg">
+                <img src="https://biodatamaker.app/images/examples/eg23.png" alt="Biodata Template" class="mx-auto w-full">
+            </div>
+            <div class="shadow-md p-4 bg-gray-50 rounded-lg">
+                <img src="https://biodatamaker.app/images/examples/eg9.webp" alt="Biodata Template" class="mx-auto w-full">
+            </div>
+        </div>
+    </div>
+
+    <!-- Essential Features Section -->
+    <div class="max-w-6xl mx-auto mt-12 p-6 text-center bg-maroon-700 text-white rounded-lg">
+        <h2 class="text-3xl font-bold mb-6">Essential features of our biodata maker app</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-lg">
+                <div class="text-2xl font-bold">✔</div>
+                <h3 class="text-xl font-semibold mt-4">Easy to use</h3>
+                <p class="mt-2">No Sign up / Registration required. Enter your details, choose a template, and voila! Your biodata in PDF format is ready.</p>
+            </div>
+            <div class="p-6 rounded-lg">
+                <div class="text-2xl font-bold">✔</div>
+                <h3 class="text-xl font-semibold mt-4">Customization made simple</h3>
+                <p class="mt-2">You have full control of what you want in your marriage biodata. You can add new fields and delete or rename existing fields.</p>
+            </div>
+            <div class="p-6 rounded-lg">
+                <div class="text-2xl font-bold">✔</div>
+                <h3 class="text-xl font-semibold mt-4">Great Looking Templates</h3>
+                <p class="mt-2">We have designed these templates which are unique, clean, and perfect for a matrimonial biodata.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="max-w-6xl mx-auto mt-12 p-6 bg-white shadow-lg rounded-lg">
+        <h2 class="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <details class="p-4 border rounded-lg" open>
+                <summary class="font-semibold cursor-pointer">Do I need design skills to create a good-looking marriage biodata?</summary>
+                <p class="mt-2">No design skills are required to create a biodata. Simply enter your details, choose a template, and your beautiful marriage biodata will be ready to download in PDF format.</p>
+            </details>
+            <details class="p-4 border rounded-lg">
+                <summary class="font-semibold cursor-pointer">Is it possible to include a profile photo in the biodata?</summary>
+                <p class="mt-2">Yes, you can upload a profile photo to personalize your biodata.</p>
+            </details>
+            <details class="p-4 border rounded-lg">
+                <summary class="font-semibold cursor-pointer">Do I need to sign up/register to create a biodata?</summary>
+                <p class="mt-2">No sign-up or registration is required. Just enter your details, choose a template, and download your biodata instantly.</p>
+            </details>
+            <details class="p-4 border rounded-lg">
+                <summary class="font-semibold cursor-pointer">Is it possible to modify the biodata once it is downloaded?</summary>
+                <p class="mt-2">Once downloaded, the biodata is in PDF format. You can edit it using a PDF editor or generate a new one with updated information.</p>
+            </details>
+            <details class="p-4 border rounded-lg">
+                <summary class="font-semibold cursor-pointer">Is it possible to include custom fields or custom data in my marriage biodata?</summary>
+                <p class="mt-2">Yes, you have full control over the fields. You can add new fields or remove existing ones as per your preference.</p>
+            </details>
+            <details class="p-4 border rounded-lg">
+                <summary class="font-semibold cursor-pointer">How and where can I reach out to you for any queries/feedback?</summary>
+                <p class="mt-2">You can contact us through our website's contact page or email us at support@biodatamaker.com.</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- How to Create Free Marriage Biodata Section -->
+    <div class="mt-12 p-6 bg-gradient-to-r from-red-600 to-pink-500 text-white shadow-lg">
+        <div class="max-w-6xl py-6 mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-6">How to Create Free Marriage Biodata?</h2>
+            <div class="flex flex-col pt-6 md:flex-row items-center">
+                <img src="https://biodatamaker.app/images/examples/eg9.webp" alt="Biodata Preview" class="w-full md:w-1/3 rounded-lg shadow-lg">
+                <div class="md:w-2/3 md:ml-6 mt-4">
+                    <div class="bg-white text-black p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold">Step 1. Fill all your details in the language of your choice</h3>
+                        <p>Click on the <strong>Create My Biodata</strong> button. In the biodata form, select the language in which you want to create your biodata. Add your <strong>photograph</strong> and fill in your <strong>personal, family, and contact</strong> details.</p>
+                        <h3 class="text-xl font-bold mt-4">Step 2. Choose the Free Template</h3>
+                        <p>Click on the <strong>Choose Template</strong> button at the bottom of the biodata form. Now choose the <strong>free template</strong> from our template gallery.</p>
+                        <h3 class="text-xl font-bold mt-4">Step 3. Download Free Marriage Biodata</h3>
+                        <p>Preview your photograph and all the information shown in the biodata. Now click on the <strong>Generate Biodata</strong> button. You will be directed to the <strong>Thank You</strong> page. Download your biodata by clicking on the <strong>Download Biodata</strong> button.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marriage Biodata Designs Section -->
+    <div class="mt-12 p-6 bg-gradient-to-r from-red-600 to-pink-500 text-white shadow-lg rounded-lg">
+        <div class="py-6">
+            <h2 class="text-5xl font-bold text-center mb-6">Marriage Biodata Designs</h2>
+            <p class="text-center text-lg mb-6">Our Curated Biodata Templates are designed to put you in the Limelight. Choose a Format which complements Your Personality.</p>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+                <div id="carousel" class="carousel">
+                    <img src="https://biodatamaker.app/images/examples/eg9.webp" class="rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://biodatamaker.app/images/examples/eg23.png" class="rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://biodatamaker.app/images/examples/eg24.png" class="rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://biodatamaker.app/images/examples/eg23.png" class="rounded-lg shadow-lg cursor-pointer">
+                </div>
+                <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-6 mt-12">
+        <p class="text-lg font-semibold">&copy; 2025 Biodata Maker. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            menu.style.right = "0";
+        });
+        document.getElementById('close-menu').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            menu.style.right = "-100%";
+        });
+        document.getElementById('createBio').addEventListener('click', function() {
+            window.location.href = "#BiodataMaker";
+        });
+
+        let index = 0;
+        const images = document.querySelectorAll(".carousel img");
+        const totalImages = images.length;
+        const visibleImages = window.innerWidth > 768 ? 3 : 1; // 3 for desktop, 1 for mobile
+        
+        function updateCarousel() {
+            const offset = -index * (100 / visibleImages);
+            document.getElementById("carousel").style.transform = `translateX(${offset}%)`;
+        }
+        
+        function autoScroll() {
+            index = (index + 1) % (totalImages - (visibleImages - 1));
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            index = (index - 1 + totalImages - (visibleImages - 1)) % (totalImages - (visibleImages - 1));
+            updateCarousel();
+        }
+        
+        function nextSlide() {
+            index = (index + 1) % (totalImages - (visibleImages - 1));
+            updateCarousel();
+        }
+        
+        setInterval(autoScroll, 3000);
+
+        function addField(sectionId) {
+            const section = document.getElementById(sectionId);
+            const div = document.createElement('div');
+            div.classList.add('field-container');
+            div.innerHTML = `
+                <div class="field-group">
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Label (Required)">
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                </div>
+                <button class="move-btn" onclick="moveUp(this)">▲</button>
+                <button class="move-btn" onclick="moveDown(this)">▼</button>
+                <button class="delete-btn" onclick="removeField(this)">X</button>
+            `;
+            section.appendChild(div);
+        }
+
+        function removeField(button) {
+            button.parentElement.remove();
+        }
+
+        function moveUp(button) {
+            const field = button.parentElement;
+            if (field.previousElementSibling) {
+                field.parentNode.insertBefore(field, field.previousElementSibling);
+            }
+        }
+
+        function moveDown(button) {
+            const field = button.parentElement;
+            if (field.nextElementSibling) {
+                field.parentNode.insertBefore(field.nextElementSibling, field);
+            }
+        }
+    </script>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
