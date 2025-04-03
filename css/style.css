@@ -121,3 +121,26 @@
 .next {
     right: 10px;
 }
+
+.field-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.delete-btn, .move-btn {
+    background: gray;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.delete-btn {
+    background: red;
+}
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
