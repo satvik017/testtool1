@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Biodata Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- Main Layout -->
+<div class="flex flex-col md:flex-row h-screen">
+    <!-- Template Preview -->
+    <div class="md:w-2/3 bg-gray-200 h-full flex items-center justify-center p-4">
+        <div class="relative w-full max-w-md mt-4">
+            <img id="previewImage" src="" alt="Template Preview" class="rounded shadow-lg w-full hidden">
+            <div class="absolute bottom-20 left-0 right-0 bg-black bg-opacity-60 text-white text-center text-sm p-2">
+                Some data is hidden in this preview. The downloaded biodata will have all the details and watermarking removed.
+            </div>
+        </div>
+    </div>
+
+    <!-- Template Selection Panel -->
+    <div class="md:w-1/3 bg-white p-4 flex flex-col justify-between z-10">
+        <h2 class="text-xl font-bold mb-4">Select Template</h2>
+
+        <!-- Thumbnails Scrollable Area -->
+        <div class="flex md:flex-col gap-4 overflow-x-auto md:overflow-y-auto pb-4">
+            <div class="relative min-w-[120px] cursor-pointer" onclick="selectTemplate('./images/template1.png')">
+                <img src="./images/template1.png" class="rounded shadow-md w-full">
+                <div class="absolute top-0 left-0 bg-blue-700 text-white text-xs font-bold px-2 py-1 rounded-br">Free</div>
+            </div>
+            <div class="relative min-w-[120px] cursor-pointer" onclick="selectTemplate('./images/template1.png')">
+                <img src="./images/template2.png" class="rounded shadow-md w-full">
+                <div class="absolute top-0 left-0 bg-purple-800 text-white text-xs font-bold px-2 py-1 rounded-br">₹74</div>
+            </div>
+            <div class="relative min-w-[120px] cursor-pointer" onclick="selectTemplate('./images/template1.png')">
+                <img src="./images/template3.png" class="rounded shadow-md w-full">
+                <div class="absolute top-0 left-0 bg-purple-800 text-white text-xs font-bold px-2 py-1 rounded-br">₹74</div>
+            </div>
+            <div class="relative min-w-[120px] cursor-pointer" onclick="selectTemplate('./images/template1.png')">
+                <img src="./images/template4.png" class="rounded shadow-md w-full">
+                <div class="absolute top-0 left-0 bg-purple-800 text-white text-xs font-bold px-2 py-1 rounded-br">₹74</div>
+            </div>
+        </div>
+
+        <!-- Bottom Buttons -->
+        <div class="mt-4 md:mt-auto flex flex-col gap-2">
+            <button class="bg-pink-600 text-white py-2 rounded font-semibold">Checkout & Download</button>
+            <button class="text-gray-600 border border-gray-300 py-2 rounded font-semibold">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectTemplate(url) {
+        document.getElementById('previewImage').src = url;
+        document.getElementById('previewImage').style.display = "block";
+    }
+</script>
+
+</body>
+</html>
