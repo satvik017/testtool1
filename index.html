@@ -6,6 +6,7 @@
     <title>Biodata Maker</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="bg-gray-100">
@@ -14,7 +15,7 @@
         <a href="#" class="text-2xl font-bold text-pink-600">Biodata Maker</a>
         <div class="md:hidden">
             <button id="menu-toggle" class="text-gray-700 focus:outline-none text-2xl">
-                ☰
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
         <ul class="hidden md:flex space-x-6 text-gray-700 font-semibold">
@@ -95,415 +96,108 @@
                     </div>
                 </div>
                 
-                <table class="w-full border-collapse border border-gray-300">
-                    <thead>
-                        <tr class="bg-gray-200">
-                            <th class="border border-gray-300 p-2">.</th>
-                            <th class="border border-gray-300 p-2">Label</th>
-                            <th class="border border-gray-300 p-2">Value</th>
-                            <th class="border border-gray-300 p-2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="biodata-table-body">
-                        
-                        <!-- Personal details begins here -->
-                        <!-- <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td colspan="2" class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Personal Details:"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr> -->
-                        <tr> <td colspan="4"> <h2 class="p-2 text-xl">Personal Details:</h2> <i class='fas fa-edit'></i></td> </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td colspan="2" class="border border-gray-300 p-2"><input type="text" class="w-full font-bold p-1 border"
-                                    value="Name"><input type="text" class="w-full p-1 my-2 border"
-                                    value="John Doe"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td  colspan="2" class="border border-gray-300 p-2"><input type="text" class="w-full font-bold p-1 border"
-                                    value="Date of Birth"><input type="text" class="w-full p-1 my-2 border"
-                                    value="01-01-2001"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Place of Birth"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Meerut"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Time of Birth"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="12:00 AM"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Rashi"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Scorpian"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Nakshatra"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Rahu"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Complexion"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="White"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Height"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="5'10''"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Gotra"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Bhardwaj"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Batchlors"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="BSc Computer Science"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Work"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Subharti University"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-    
-                        <!-- Family Details begins here -->
-                        <!-- <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td colspan="2" class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Family Details:"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr> -->
-                        <tr> <td colspan="4"> <h2 class="p-2 text-xl">Family Details:</h2> </td> </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Father's Name"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Satvik"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Father's Occupation"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Software Developer"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Mother's Name"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Priyanka"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Mother's Occupation"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Doctor"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Siblings"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Sister"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <!-- Contact Details begins here -->
-                        <!-- <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td colspan="2" class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Contact Details:"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr> -->
-                        <tr> <td colspan="4"> <h2 class="p-2 text-xl">Contact Details:</h2> </td> </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Contact Person"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Priyank"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Contact Number"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="9999988888"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Email Id"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="abc123@xyz.com"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                        <tr draggable="true" class="cursor-move">
-                            <td class="border border-gray-300 p-2 text-center cursor-move">
-                                <span class="drag-handle"><svg xmlns="http://www.w3.org/2000/svg" id="mdi-drag"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7,19V17H9V19H7M11,19V17H13V19H11M15,19V17H17V19H15M7,15V13H9V15H7M11,15V13H13V15H11M15,15V13H17V15H15M7,11V9H9V11H7M11,11V9H13V11H11M15,11V9H17V11H15M7,7V5H9V7H7M11,7V5H13V7H11M15,7V5H17V7H15Z" />
-                                    </svg></span>
-                            </td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="Residential Address"></td>
-                            <td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 border"
-                                    value="123 abc colony, lmn city Uttar pradesh"></td>
-                            <td class="border border-gray-300 p-2 text-center">
-                                <button class="bg-red-500 text-white px-3 py-1 rounded"
-                                    onclick="this.closest('tr').remove()">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button id="add-row"
-                    class="mt-4 bg-pink-600 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-lg hover:bg-pink-700">Add
-                    Row</button>
-                <button id="add-label"
-                    class="mt-4 bg-pink-600 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-lg hover:bg-pink-700">Add
-                    Label</button>
+                <!-- Biodata Entry Section -->
+                <div class="max-w-4xl mx-auto mt-12 p-6 bg-white shadow-lg rounded-lg">
+                    <h2 class="text-3xl font-bold mb-6">Personal Details</h2>
+                    <div id="personal-details" class="space-y-4">
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Name">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <div class="field-controls">
+                                <button class="move-btn" onclick="moveUp(this)"><i class="fa-solid fa-caret-up"></i></button>
+                                <button class="move-btn" onclick="moveDown(this)"><i class="fa-solid fa-caret-down"></i></button>
+                                <button class="delete-btn" onclick="removeField(this)"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Date of Birth">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <div class="field-controls">
+                                <button class="move-btn" onclick="moveUp(this)"><i class="fa-solid fa-caret-up"></i></button>
+                                <button class="move-btn" onclick="moveDown(this)"><i class="fa-solid fa-caret-down"></i></button>
+                                <button class="delete-btn" onclick="removeField(this)"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Place of Birth">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <div class="field-controls">
+                                <button class="move-btn" onclick="moveUp(this)"><i class="fa-solid fa-caret-up"></i></button>
+                                <button class="move-btn" onclick="moveDown(this)"><i class="fa-solid fa-caret-down"></i></button>
+                                <button class="delete-btn" onclick="removeField(this)"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Time of Birth">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <div class="field-controls">
+                                <button class="move-btn" onclick="moveUp(this)"><i class="fa-solid fa-caret-up"></i></button>
+                                <button class="move-btn" onclick="moveDown(this)"><i class="fa-solid fa-caret-down"></i></button>
+                                <button class="delete-btn" onclick="removeField(this)"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="addField('personal-details')" class="mt-4 bg-blue-500 text-white p-2 rounded">+ Add More Fields</button>
+                </div>
+
+                <div class="max-w-4xl mx-auto mt-12 p-6 bg-white shadow-lg rounded-lg">
+                    <h2 class="text-3xl font-bold mb-6">Family Details</h2>
+                    <div id="family-details" class="space-y-4">
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Father's Name">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <div class="field-controls">
+                                <button class="move-btn" onclick="moveUp(this)"><i class="fa-solid fa-caret-up"></i></button>
+                                <button class="move-btn" onclick="moveDown(this)"><i class="fa-solid fa-caret-down"></i></button>
+                                <button class="delete-btn" onclick="removeField(this)"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Father's Occupation">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <div class="field-controls">
+                                <button class="move-btn" onclick="moveUp(this)"><i class="fa-solid fa-caret-up"></i></button>
+                                <button class="move-btn" onclick="moveDown(this)"><i class="fa-solid fa-caret-down"></i></button>
+                                <button class="delete-btn" onclick="removeField(this)"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Mother's Name">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <div class="field-controls">
+                                <button class="move-btn" onclick="moveUp(this)"><i class="fa-solid fa-caret-up"></i></button>
+                                <button class="move-btn" onclick="moveDown(this)"><i class="fa-solid fa-caret-down"></i></button>
+                                <button class="delete-btn" onclick="removeField(this)"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-group">
+                                <input type="text" class="w-full p-2 border rounded" value="Mother's Occupation">
+                                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                            </div>
+                            <div class="field-controls">
+                                <button class="move-btn" onclick="moveUp(this)"><i class="fa-solid fa-caret-up"></i></button>
+                                <button class="move-btn" onclick="moveDown(this)"><i class="fa-solid fa-caret-down"></i></button>
+                                <button class="delete-btn" onclick="removeField(this)"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="addField('family-details')" class="mt-4 bg-blue-500 text-white p-2 rounded">+ Add More Fields</button>
+                </div>
             </div>
     
             <!-- Preview Area -->
@@ -670,6 +364,40 @@
         }
         
         setInterval(autoScroll, 3000);
+
+        function addField(sectionId) {
+            const section = document.getElementById(sectionId);
+            const div = document.createElement('div');
+            div.classList.add('field-container');
+            div.innerHTML = `
+                <input type="text" class="w-full p-2 border rounded bg-blue-100" placeholder="Label">
+                <input type="text" class="w-full p-2 border rounded" placeholder="Value">
+                <div class="field-controls">
+                    <button class="move-btn" onclick="moveUp(this)"><i class="fa-solid fa-caret-up"></i></button>
+                    <button class="move-btn" onclick="moveDown(this)"><i class="fa-solid fa-caret-down"></i></button>
+                    <button class="delete-btn" onclick="removeField(this)"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            `;
+            section.appendChild(div);
+        }
+
+        function removeField(button) {
+            button.closest('.field-container').remove();
+        }
+
+        function moveUp(button) {
+            const field = button.closest('.field-container');
+            if (field.previousElementSibling) {
+                field.parentNode.insertBefore(field, field.previousElementSibling);
+            }
+        }
+
+        function moveDown(button) {
+            const field = button.closest('.field-container');
+            if (field.nextElementSibling) {
+                field.parentNode.insertBefore(field.nextElementSibling, field);
+            }
+        }
     </script>
 
     <script src="./js/script.js"></script>
