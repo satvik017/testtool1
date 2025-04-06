@@ -102,6 +102,11 @@
     #rot-template{
         display: none;
     }
+    .move-btn{
+        padding: 0px;
+        color: black;
+        background-color: transparent;
+    }
 }
 .carousel-btn {
     position: absolute;
@@ -127,7 +132,7 @@
     align-items: center;
     gap: 10px;
 }
-.delete-btn, .move-btn {
+.delete-btn, .move-btn{
     background: gray;
     color: white;
     padding: 5px 10px;
@@ -143,4 +148,45 @@
     flex-direction: column;
     gap: 5px;
     width: 100%;
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    position: relative;
+    padding-right: 3rem;
+}
+.field-controls {
+    position: absolute;
+    top: 50%;
+    right: 0.25rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+@media (min-width: 768px) {
+    .field-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        padding-right: 0;
+    }
+    .field-controls {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        margin-left: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .move-btn{
+        background: transparent;
+        color: #001F3F;
+        padding: 0px;
+        border: none;
+        cursor: pointer;
+        border-radius: 0px;
+    }
 }
