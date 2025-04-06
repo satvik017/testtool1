@@ -187,7 +187,7 @@ document.querySelectorAll('#biodata-table-body input').forEach(input => {
 
 document.getElementById('download-btn').addEventListener('click', function () {
     // downloadPDF();
-    window.location.href = "/templates.html";
+    window.location.href = "/testtool1/templates.html";
 });
 
 
